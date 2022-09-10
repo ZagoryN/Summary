@@ -16,9 +16,9 @@ void FillArray(string?[] array)  //метод наполнения массив�
     while (index < length)
     {
         array[index] = Console.ReadLine();
-        index++; 
+        index++;
     }
-    
+
 }
 
 Console.Write("Введите количество элементов массива: ");
@@ -31,9 +31,8 @@ FillArray(arrayOfString);
 Console.WriteLine($"Исходный массив: [{string.Join(", ", arrayOfString)}]"); // напечатаем получившийся массив
 
 int count = 0;
-//проверка: подсчет количества строк, состоящих из 3 или менее элементов
-for (int i = 0; i < arrayOfString.Length; i++)
-{    
+for (int i = 0; i < arrayOfString.Length; i++) //проверка: подсчет количества строк, состоящих из 3 или менее элементов
+{
     Console.WriteLine(arrayOfString[i].Length);
 }
 
@@ -42,3 +41,19 @@ for (int i = 0; i < arrayOfString.Length; i++)
     if (arrayOfString[i].Length <= 3) count++;
 }
 Console.WriteLine(count);
+
+string[] resultArrayOfString;   // инициализация нового массива
+resultArrayOfString = new string[count];
+int j = 0;
+
+for (int i = 0; i < arrayOfString.Length; i++)
+{
+    if (arrayOfString[i].Length <= 3)
+    {
+        resultArrayOfString[j] = arrayOfString[i];
+        j++;
+    }
+}
+
+Console.WriteLine($"Массив, состоящий из строк, длина которых - три или менее символов: [{string.Join(", ", resultArrayOfString)}]");
+
