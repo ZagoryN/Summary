@@ -30,3 +30,15 @@ arrayOfString = new string[numberOfElements];
 FillArray(arrayOfString);
 Console.WriteLine($"Исходный массив: [{string.Join(", ", arrayOfString)}]"); // напечатаем получившийся массив
 
+int count = 0;
+//проверка: подсчет количества строк, состоящих из 3 или менее элементов
+for (int i = 0; i < arrayOfString.Length; i++)
+{    
+    Console.WriteLine(arrayOfString[i].Length);
+}
+
+for (int i = 0; i < arrayOfString.Length; i++)
+{
+    if (arrayOfString[i].Length <= 3) count++;
+}
+Console.WriteLine(count);
